@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SpaceO Mangalore | Rent, buy and sell property</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#FAF7F2;--surface:#fff;--ink:#2B160D;--muted:#6A5A50;--gold:#A87A2E;--line:#E8DDCF;--btn:#3A1D12;--btn-h:#24110A;--on:#FAF1E2;--hb:#2E160D;--hg:#D4AE6A;--hc:#F6EDE0;--sh:0 14px 40px rgba(58,29,18,.10);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#160B06;--surface:#241410;--ink:#F3E9DA;--muted:#B9A796;--gold:#D4AE6A;--line:#3A2419;--btn:#D4AE6A;--btn-h:#E6C183;--on:#2B160D;--sh:0 14px 40px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#160B06;--surface:#241410;--ink:#F3E9DA;--muted:#B9A796;--gold:#D4AE6A;--line:#3A2419;--btn:#D4AE6A;--btn-h:#E6C183;--on:#2B160D;--sh:0 14px 40px rgba(0,0,0,.4);color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.1;margin:0;letter-spacing:-.015em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.notice{background:var(--hg);color:#2B160D;text-align:center;padding:9px 16px;font-size:14px;font-weight:500}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-family:Fraunces,serif;font-size:26px;font-weight:600;line-height:1}
+.logo b{color:var(--gold)}
+.logo small{display:block;font:500 10.5px Figtree,sans-serif;color:var(--muted);letter-spacing:.2em;margin-top:4px}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:15px}
+nav ul a{color:var(--muted);font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
+nav ul a:hover{color:var(--ink);border-color:var(--gold)}
+.btn{display:inline-block;background:var(--btn);color:var(--on);border:0;border-radius:10px;padding:13px 24px;font:600 15px Figtree,sans-serif;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--btn-h)}
+.btn.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.alt:hover{background:var(--ink);color:var(--bg)}
+.hero{background:radial-gradient(900px 500px at 85% 10%,#5A3020 0,transparent 60%),var(--hb);color:var(--hc);padding:72px 0 110px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,68px);max-width:12ch}
+.hero p{opacity:.8;font-size:19px;max-width:46ch;margin:22px 0 32px}
+.hero .btn{background:var(--hg);color:#2B160D}
+.hero .btn:hover{background:#E8C788}
+.hero .btn.alt{background:transparent;color:var(--hc);box-shadow:inset 0 0 0 1.5px rgba(246,237,224,.6)}
+.hero .btn.alt:hover{background:var(--hc);color:var(--hb)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero p.small{font-size:14px;opacity:.65;margin:20px 0 0}
+.frame{border-radius:22px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);border:1px solid rgba(212,174,106,.35)}
+.frame svg{display:block;width:100%;height:auto}
+.stats{margin-top:-56px;position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh)}
+.stats div{padding:26px 28px;border-right:1px solid var(--line)}
+.stats div:last-child{border:0}
+.stats strong{display:block;font:600 36px Fraunces,serif;color:var(--gold)}
+.stats span{color:var(--muted);font-size:14px}
+section{padding:88px 0}
+h2.t{font-size:clamp(30px,3.8vw,44px)}
+.sub{color:var(--muted);margin:12px 0 40px;max-width:56ch;font-size:17px}
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
+.box h3{font:600 18px Figtree,sans-serif;margin-bottom:8px}
+.box p{margin:0;color:var(--muted);font-size:15px}
+.ic{width:48px;height:48px;border-radius:12px;background:var(--btn);color:var(--hg);display:grid;place-items:center;margin-bottom:18px}
+.ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.help .box{display:flex;flex-direction:column;align-items:flex-start}
+.help .box p{margin-bottom:20px;flex:1}
+.help h3{font:600 26px Fraunces,serif}
+.link{font-weight:600;border-bottom:2px solid var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:14px;font-weight:500;background:var(--bg)}
+.steps{counter-reset:s}
+.steps .box{position:relative;padding-top:64px}
+.steps .box::before{counter-increment:s;content:counter(s);position:absolute;top:22px;left:28px;font:600 32px Fraunces,serif;color:var(--gold)}
+.band{background:var(--hb);color:var(--hc)}
+.band .sub{color:var(--hc);opacity:.75}
+.band .box{background:rgba(246,237,224,.05);border-color:rgba(246,237,224,.16)}
+.band .box p{color:var(--hc);opacity:.8}
+.band .box h3{color:var(--hg)}
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+.svc div{padding:20px 0;border-bottom:1px solid var(--line)}
+.svc h3{font:600 17px Figtree,sans-serif;margin-bottom:4px}
+.svc p{margin:0;color:var(--muted);font-size:15px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 22px;margin-bottom:12px;max-width:800px}
+summary{cursor:pointer;font-weight:600;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 18px;color:var(--muted)}
+.cbar{background:var(--hb);color:var(--hc);border-radius:24px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cbar h2{font-size:clamp(28px,3.4vw,40px);max-width:18ch}
+.cbar .btn{background:var(--hg);color:#2B160D}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.links a{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 18px;font-weight:600}
+.links a:hover{border-color:var(--gold)}
+form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:var(--sh)}
+label{font-size:14px;font-weight:500;display:grid;gap:6px}
+input,textarea{width:100%;font:400 15px Figtree,sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.note{color:var(--gold);font-weight:600;min-height:24px;margin:0}
+footer{background:var(--hb);color:var(--hc);padding:56px 0 28px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer h3{font:600 15px Figtree,sans-serif;color:var(--hg);margin-bottom:12px}
+footer p,footer li{opacity:.75;font-size:14px;margin:0 0 6px}
+footer ul{list-style:none;margin:0;padding:0}
+footer a:hover{color:var(--hg);opacity:1}
+.fb{border-top:1px solid rgba(246,237,224,.15);margin-top:36px;padding-top:20px;font-size:13px;opacity:.6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;background:var(--hg);color:#2B160D;font-weight:600;padding:12px 20px;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.3)}
+@media (max-width:960px){.hero-grid,.contact,.fg{grid-template-columns:1fr}.g3,.g4{grid-template-columns:1fr 1fr}nav ul{display:none}.svc{grid-template-columns:1fr}.frame{max-width:560px}}
+@media (max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stats div{border-right:0;border-bottom:1px solid var(--line)}section{padding:60px 0}.hero{padding:48px 0 90px}.cbar{padding:32px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="notice">RentMe Mangalore is now SpaceO Mangalore. A new name, the same trusted team.</div>
+<header><div class="wrap"><nav aria-label="Main">
+<a class="logo" href="#top">Space<b>O</b><small>MANGALORE</small></a>
+<ul><li><a href="#help">Rent, buy, sell</a></li><li><a href="#types">Property types</a></li><li><a href="#services">Services</a></li><li><a href="#faq">FAQs</a></li></ul>
+<a class="btn" href="#contact">Contact us</a></nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hero-grid">
+<div>
+<h1>Find your perfect space in Mangalore</h1>
+<p>Homes, flats, rooms, PGs and commercial spaces to rent, buy or sell, handled by a property management company that knows the city.</p>
+<div class="cta"><a class="btn" href="https://www.instagram.com/spaceo_mangalore">See latest listings</a><a class="btn alt" href="https://wa.me/918088709922">Chat on WhatsApp</a></div>
+<p class="small">New properties are posted on our Instagram page. Look for the Available, For Sale and Daily Rentals highlights. Brokerage applies.</p>
+</div>
+<div class="frame"><svg viewBox="0 0 480 360" role="img" aria-label="Illustration of Mangalore buildings by the sea at dusk">
+<defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A2517"/><stop offset="1" stop-color="#C98F4E"/></linearGradient>
+<pattern id="w" width="16" height="18" patternUnits="userSpaceOnUse"><rect x="4" y="4" width="8" height="9" rx="1" fill="#F3D9A0" opacity=".85"/></pattern></defs>
+<rect width="480" height="360" fill="url(#sk)"/>
+<circle cx="330" cy="200" r="58" fill="#F3D9A0" opacity=".9"/>
+<rect x="40" y="130" width="84" height="170" fill="#2E160D"/><rect x="40" y="130" width="84" height="170" fill="url(#w)"/>
+<rect x="136" y="90" width="72" height="210" fill="#3A1D12"/><rect x="136" y="90" width="72" height="210" fill="url(#w)"/>
+<rect x="220" y="160" width="96" height="140" fill="#2E160D"/><rect x="220" y="160" width="96" height="140" fill="url(#w)"/>
+<polygon points="340,200 390,165 440,200" fill="#D4AE6A"/><rect x="348" y="200" width="84" height="100" fill="#241109"/><rect x="362" y="222" width="22" height="30" fill="#F3D9A0"/><rect x="398" y="222" width="22" height="30" fill="#F3D9A0"/>
+<path d="M0 296 Q60 280 120 296 T240 296 T360 296 T480 296 V360 H0Z" fill="#241109" opacity=".9"/>
+<path d="M0 325 Q60 309 120 325 T240 325 T360 325 T480 325 V360 H0Z" fill="#160B06"/>
+</svg></div>
+</div></div>
+
+<div class="wrap"><div class="stats">
+<div><strong>8,400+</strong><span>Followers on our Instagram page</span></div>
+<div><strong>700+</strong><span>Property posts and updates</span></div>
+<div><strong>5</strong><span>Property types: homes, flats, rooms, PGs, commercial</span></div>
+</div></div>
+
+<section id="help"><div class="wrap help">
+<h2 class="t">How can we help you?</h2>
+<p class="sub">Tell us what you’re looking for and we’ll take it from there.</p>
+<div class="grid g3">
+<div class="box"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3"/></svg></div><h3>Rent</h3><p>Flats, homes, rooms and PGs for long stays, plus daily rentals for short ones.</p><a class="link" href="https://wa.me/918088709922?text=Hi%2C%20I%27m%20looking%20to%20rent%20a%20property%20in%20Mangalore.">Ask about rentals</a></div>
+<div class="box"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg></div><h3>Buy</h3><p>Find a home or commercial property to buy, with help on paperwork and pricing.</p><a class="link" href="https://wa.me/918088709922?text=Hi%2C%20I%27m%20looking%20to%20buy%20a%20property%20in%20Mangalore.">Ask about buying</a></div>
+<div class="box"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg></div><h3>Sell</h3><p>List your property with us and reach buyers through our active Instagram page.</p><a class="link" href="https://wa.me/918088709922?text=Hi%2C%20I%20want%20to%20sell%20my%20property%20in%20Mangalore.">Ask about selling</a></div>
+</div></div></section>
+
+<section id="types" style="padding-top:0"><div class="wrap">
+<h2 class="t">Property types</h2>
+<p class="sub">Whatever you need, we’ve likely listed something like it.</p>
+<div class="grid g4">
+<div class="box"><h3>Homes and flats</h3><p>Apartments and independent houses to rent or buy.</p><div class="chips"><span>Flats</span><span>Homes</span><span>Houses</span></div></div>
+<div class="box"><h3>Rooms and PGs</h3><p>Affordable stays for students and working professionals.</p><div class="chips"><span>Rooms</span><span>PGs</span><span>Hostels</span></div></div>
+<div class="box"><h3>Commercial</h3><p>Space to run and grow your business.</p><div class="chips"><span>Shops</span><span>Offices</span><span>Warehouses</span></div></div>
+<div class="box"><h3>Daily rentals</h3><p>Short stays by the day. See the highlight on Instagram.</p><div class="chips"><span>By the day</span><span>Short stays</span></div></div>
+</div></div></section>
+
+<section class="band"><div class="wrap">
+<h2 class="t">How it works</h2>
+<p class="sub">Three simple steps from browsing to moving in.</p>
+<div class="grid g3 steps">
+<div class="box"><h3>Browse our listings</h3><p>See current properties on our Instagram page and its Available, For Sale and Daily Rentals highlights.</p></div>
+<div class="box"><h3>Message us</h3><p>Send a message on WhatsApp or Instagram with what you need, and we’ll share matching options.</p></div>
+<div class="box"><h3>Visit and finalise</h3><p>View the property, then we guide you through the paperwork with the owner. Brokerage applies.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2 class="t">Why choose us</h2>
+<p class="sub">Local help from a team people already trust.</p>
+<div class="grid g3">
+<div class="box"><h3>Trusted and reliable</h3><p>Years of experience and thousands of satisfied customers make us a name you can depend on.</p></div>
+<div class="box"><h3>Customer first</h3><p>We listen, understand and suggest solutions that fit your needs.</p></div>
+<div class="box"><h3>Fast and efficient</h3><p>A streamlined process gets you answers quickly without cutting corners.</p></div>
+<div class="box"><h3>Affordable pricing</h3><p>Competitive rates so you get the best value for your money.</p></div>
+<div class="box"><h3>Transparent dealings</h3><p>Accurate, up-to-date listings and clear communication at every step.</p></div>
+<div class="box"><h3>Backed by SpaceO Group</h3><p>A growing group with the same team and the same commitment.</p></div>
+</div></div></section>
+
+<section id="services" style="padding-top:0"><div class="wrap">
+<h2 class="t">Services offered</h2>
+<p class="sub">From finding a place to managing it afterwards.</p>
+<div class="svc">
+<div><h3>Property buying</h3><p>Find and purchase your dream property with ease.</p></div>
+<div><h3>Property selling</h3><p>Get the best value for your property through trusted listings.</p></div>
+<div><h3>Property rentals</h3><p>Find affordable rooms, flats, homes and PGs quickly.</p></div>
+<div><h3>Commercial leasing</h3><p>Leasing for offices, shops and warehouses.</p></div>
+<div><h3>Legal and documentation</h3><p>Support with legal formalities and paperwork.</p></div>
+<div><h3>Investment consultation</h3><p>Guidance for smart, profitable investments.</p></div>
+<div><h3>Property management</h3><p>Maintenance and management for your property.</p></div>
+</div></div></section>
+
+<section class="band"><div class="wrap">
+<h2 class="t">What we stand for</h2>
+<p class="sub">One place for buyers, sellers and renters, built on clear information and fair dealing.</p>
+<div class="grid g3">
+<div class="box"><h3>Our mission</h3><p>To make every buyer, seller and renter’s journey smooth and hassle-free, with accurate listings, dedicated support and transparent transactions.</p></div>
+<div class="box"><h3>Our vision</h3><p>To become the most trusted, customer-centric real estate company, simplifying complex processes with fairness and efficiency.</p></div>
+<div class="box"><h3>Our values</h3><p>Integrity, a customer-first approach and a commitment to excellence in every listing and service.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap">
+<h2 class="t" style="margin-bottom:32px">Frequently asked questions</h2>
+<details><summary>Where can I see available properties?</summary><p>Current listings are posted on our Instagram page. Message us there or on WhatsApp to ask about a property.</p></details>
+<details><summary>Is SpaceO Mangalore the same as RentMe Mangalore?</summary><p>Yes. RentMe Mangalore is now SpaceO Mangalore, with the same team and the same commitment, now powered by SpaceO Group.</p></details>
+<details><summary>What areas do you serve?</summary><p>We serve Mangalore.</p></details>
+<details><summary>Is there a brokerage fee?</summary><p>Brokerage applies. Message us for current rates and any offers.</p></details>
+<details><summary>Do you verify listings?</summary><p>We recommend contacting us or the property owner directly to confirm details before you commit.</p></details>
+<details><summary>What is the documentation process when renting?</summary><p>You usually submit identity proof and address proof, then sign the rental agreement. We guide you through the paperwork with the brokers and property owners.</p></details>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="cbar"><h2>Ready to find your space?</h2><a class="btn" href="https://wa.me/918088709922">Chat on WhatsApp</a></div></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap contact">
+<div><h2 class="t">Get in touch</h2><p class="sub" style="margin-bottom:0">Tell us what you need and we’ll reply as soon as we can.</p>
+<p style="margin-top:22px">Email: <a href="mailto:rentmemlr@gmail.com"><strong>rentmemlr@gmail.com</strong></a><br>Phone: <a href="tel:+918088709922"><strong>+91 80887 09922</strong></a></p>
+<div class="links"><a href="https://www.instagram.com/spaceo_mangalore">Instagram</a><a href="https://wa.me/918088709922">WhatsApp</a><a href="mailto:rentmemlr@gmail.com?subject=Property%20Inquiry">Email us</a></div></div>
+<form id="form">
+<label>Name<input id="n" required autocomplete="name"></label>
+<label>Email<input id="e" type="email" required autocomplete="email"></label>
+<label>Message<textarea id="m" rows="4" required></textarea></label>
+<button class="btn" type="submit">Send message</button>
+<p class="note" id="note" role="status"></p>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="fg">
+<div><div class="logo">Space<b>O</b><small style="color:#F6EDE0;opacity:.6">MANGALORE</small></div><p style="margin-top:16px;max-width:34ch">Property management company. Rent, buy and sell homes, flats, rooms, PGs and commercial spaces in Mangalore.</p></div>
+<div><h3>Explore</h3><ul><li><a href="#help">Rent, buy, sell</a></li><li><a href="#types">Property types</a></li><li><a href="#services">Services</a></li><li><a href="#faq">FAQs</a></li></ul></div>
+<div><h3>Contact</h3><ul><li><a href="tel:+918088709922">+91 80887 09922</a></li><li><a href="mailto:rentmemlr@gmail.com">rentmemlr@gmail.com</a></li><li><a href="https://www.instagram.com/spaceo_mangalore">Instagram</a></li></ul></div>
+</div>
+<div class="fb"><span>© 2026 SpaceO Mangalore. Powered by SpaceO Group.</span><span>Brokerage applies.</span></div>
+</div></footer>
+<a class="wa" href="https://wa.me/918088709922">Chat on WhatsApp</a>
+
+<script>
+document.getElementById('form').onsubmit=function(e){e.preventDefault();var s=encodeURIComponent('Property Inquiry from '+document.getElementById('n').value),b=encodeURIComponent(document.getElementById('m').value+'\n\nReply to: '+document.getElementById('e').value);
+location.href='mailto:rentmemlr@gmail.com?subject='+s+'&body='+b;document.getElementById('note').textContent='Opening your email app to send the message.'};
+</script>
+</body>
+</html>
